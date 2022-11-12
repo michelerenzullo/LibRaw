@@ -617,7 +617,7 @@ void LibRaw::Canon_CameraSettings(unsigned len)
   imgdata.shootinginfo.FocusMode = get2(); // 7
   imCanon.RecordMode = (get2(), get2());   // 9, format
   fseek(ifp, 14, SEEK_CUR);
-  imgdata.shootinginfo.MeteringMode = get2(); // 17
+  //imgdata.shootinginfo.MeteringMode = get2(); // 17
   get2();
   imgdata.shootinginfo.AFPoint = get2();      // 19
   imgdata.shootinginfo.ExposureMode = get2(); // 20

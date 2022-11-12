@@ -2017,7 +2017,7 @@ void LibRaw::parseSonyMakernotes(
       imCommon.real_ISO =
           100.0f * libraw_powf64l(2.0f, (16 - ((float)sget2(s)) / 256.0f));
     }
-    imgdata.shootinginfo.ExposureProgram = SonySubstitution[table_buf[0x35]];
+    //imgdata.shootinginfo.ExposureProgram = SonySubstitution[table_buf[0x35]];
     if ((ilm.LensMount != LIBRAW_MOUNT_Canon_EF) &&
         (ilm.LensMount != LIBRAW_MOUNT_Sigma_X3F)) {
       switch (SonySubstitution[table_buf[0x0048]]) {

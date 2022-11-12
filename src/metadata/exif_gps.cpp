@@ -182,6 +182,9 @@ void LibRaw::parse_exif(int base)
     case 0x829d: // 33437, FNumber
       aperture = getreal(type);
       break;
+    case 0x8822:
+      imgdata.shootinginfo.ExposureProgram = get2();
+	    break;
     case 0x8827: // 34855
       iso_speed = get2();
       break;
@@ -210,6 +213,9 @@ void LibRaw::parse_exif(int base)
       if ((fabs(ape = getreal(type)) < 256.0) && (!aperture))
         aperture = libraw_powf64l(2.0, ape / 2);
       break;
+    case 0x9207:
+	    imgdata.shootinginfo.MeteringMode = (short)get2();
+	    break;
     case 0x9209: // 37385
       flash_used = getreal(type);
       break;

@@ -73,7 +73,7 @@ void LibRaw::tiff_head(struct tiff_hdr *th, int full)
   strncpy(th->t_desc, desc, 512);
   strncpy(th->t_make, make, 64);
   strncpy(th->t_model, model, 64);
-  strcpy(th->soft, "dcraw v" DCRAW_VERSION);
+  strcpy(th->soft, "LibRaw 202409 WASM");
   t = localtime(&timestamp);
   sprintf(th->date, "%04d:%02d:%02d %02d:%02d:%02d", t->tm_year + 1900,
           t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec);
@@ -103,7 +103,7 @@ void LibRaw::tiff_head(struct tiff_hdr *th, int full)
     tiff_set(th, &th->ntag, 279, 4, 1,
              height * width * colors * output_bps / 8);
   }
-  else
+  //else
     tiff_set(th, &th->ntag, 274, 3, 1, "12435867"[flip] - '0');
   tiff_set(th, &th->ntag, 282, 5, 1, TOFF(th->rat[0]));
   tiff_set(th, &th->ntag, 283, 5, 1, TOFF(th->rat[2]));

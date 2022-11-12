@@ -72,8 +72,8 @@ lib_libraw_a_SOURCES = src/libraw_c_api.cpp \
 	src/x3f/x3f_utils_patched.cpp 
 
 
-lib_libraw_r_a_CXXFLAGS = -pthread -w
-lib_libraw_r_a_CFLAGS = -pthread -w
+lib_libraw_r_a_CXXFLAGS = -w
+lib_libraw_r_a_CFLAGS = -w
 lib_libraw_la_SOURCES = $(lib_libraw_a_SOURCES)
 lib_libraw_r_la_SOURCES = $(lib_libraw_a_SOURCES)
 

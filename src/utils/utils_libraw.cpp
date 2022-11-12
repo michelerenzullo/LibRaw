@@ -665,11 +665,7 @@ void 	LibRaw::libraw_swab(void *arr, size_t len)
 #ifdef LIBRAW_OWN_SWAB
 	uint16_t *array = (uint16_t*)arr;
 	size_t bytes = len/2;
-	for(; bytes; --bytes)
-	{
-		*array = ((*array << 8) & 0xff00) | ((*array >> 8) & 0xff);
-		array++;
-	}
+	while(bytes--) *array++ = ((*array << 8) & 0xff00) | ((*array >> 8) & 0xff);
 #else
 	swab((char*)arr,(char*)arr,len);
 #endif
